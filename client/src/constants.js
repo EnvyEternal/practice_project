@@ -2,6 +2,7 @@ const env = process.env.NODE_ENV || 'development'
 const serverIP = 'localhost'
 const serverPort = 5000
 export default {
+  TELNUMBER: '(099) 463-233-09',
   CUSTOMER: 'customer',
   CREATOR: 'creator',
   CONTEST_STATUS_ACTIVE: 'active',
