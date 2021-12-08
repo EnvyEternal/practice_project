@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import styles from './Header.module.sass';
 import CONSTANTS from '../../constants';
 import { getUserAction, clearUserStore, headerRequest } from '../../actions/actionCreator';
+import Logo from '../Logo';
 
 class Header extends React.Component {
   componentDidMount() {
@@ -88,14 +89,14 @@ class Header extends React.Component {
           <div className={styles.loginSignnUpHeaders}>
             <div className={styles.numberContainer}>
               <img src={`${CONSTANTS.STATIC_IMAGES_PATH}phone.png`} alt="phone" />
-              <a href={'tel:'+ CONSTANTS.TELNUMBER}>{CONSTANTS.TELNUMBER}</a>
+              <a style={{textDecoration: 'none'}} href={'tel:'+ CONSTANTS.TELNUMBER}>{CONSTANTS.TELNUMBER}</a>
             </div>
             <div className={styles.userButtonsContainer}>
               {this.renderLoginButtons()}
             </div>
           </div>
           <div className={styles.navContainer}>
-            <img src={`${CONSTANTS.STATIC_IMAGES_PATH}blue-logo.png`} className={styles.logo} alt="blue_logo" />
+            <Logo />
             <div className={styles.leftNav}>
               <div className={styles.nav}>
                 <ul>
