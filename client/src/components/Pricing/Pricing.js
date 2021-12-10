@@ -10,21 +10,22 @@ function Pricing() {
                     <div className={styles.infoCenter}>
                         <ul>
                             <li>
-                                <div>
-                                    <h4>
+                                <div className={styles.infoText}>
+                                    <h4 className={styles.head}>
                                         Pay a Fraction of cost vs hiring an agency
                                     </h4>
-                                    <p>
+                                    <p className={styles.body}>
                                         For as low as $299, our naming contests and marketplace allow you to get an amazing brand quickly and affordably.
                                     </p>
                                 </div>
                             </li>
+                            <li className={styles.line}></li>
                             <li>
-                                <div>
-                                    <h4>
+                                <div className={styles.infoText}>
+                                    <h4 className={styles.head}>
                                         Pay a Fraction of cost vs hiring an agency
                                     </h4>
-                                    <p>
+                                    <p className={styles.body}>
                                         For as low as $299, our naming contests and marketplace allow you to get an amazing brand quickly and affordably.
                                     </p>
                                 </div>
@@ -33,24 +34,26 @@ function Pricing() {
                     </div>
                 </div>
                 <div className={styles.questions}>
-                    <div>
+                    <div className={styles.questionsUl}>
                         <ul>
-                            <li>
-                                <div>
-                                    <h4>
+                            <li className={styles.questionsUl}>
+                                <div className={styles.questionsDiv}>
+                                    <h4 className={styles.headq}>
                                         Questions?
                                     </h4>
-                                    <p>
+                                    <p className={styles.bodyq}>
                                         Speak with a Squadhelp platform expert to learn more and get your questions answered.
                                     </p>
-                                    <button>
+                                    <button className={styles.buttonq}>
                                         Schedule Consultation
                                     </button>
-                                    <a href={`tel:${CONSTANTS.CONTACTS.TEL}`}>
-                                        <img src={`${CONSTANTS.STATIC_IMAGES_PATH}phone.png`} alt="phone" />
-                                        <span>{CONSTANTS.CONTACTS.TEL}</span>
-                                    </a>
-                                    <span>
+                                    <div>
+                                        <a href={`tel:${CONSTANTS.CONTACTS.TEL}`}>
+                                            <img src={`${CONSTANTS.STATIC_IMAGES_PATH}phone.png`} alt="phone" />
+                                            <span className={styles.buttonText}>{CONSTANTS.CONTACTS.TEL}</span>
+                                         </a>
+                                    </div>
+                                    <span className={styles.bodyq}>
                                         Call us for assistance
                                     </span>
                                 </div>
