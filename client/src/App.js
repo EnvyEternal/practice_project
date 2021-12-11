@@ -7,10 +7,10 @@ import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
 import Payment from './pages/Payment/Payment';
 import StartContestPage from './pages/StartContestPage/StartContestPage';
 import Dashboard from './pages/Dashboard/Dashboard';
-import PrivateHoc from './components/PrivateHoc/PrivateHoc';
+import PrivateHoc from './components/HOCs/PrivateHoc';
 import NotFound from './components/NotFound/NotFound';
 import Home from './pages/Home/Home';
-import OnlyNotAuthorizedUserHoc from './components/OnlyNotAuthorizedUserHoc/OnlyNotAuthorizedUserHoc';
+import withNotAuthHoc from './components/HOCs/withNotAuthHoc';
 import ContestPage from './pages/ContestPage/ContestPage';
 import UserProfile from './pages/UserProfile/UserProfile';
 import 'react-toastify/dist/ReactToastify.css';
@@ -36,8 +36,8 @@ class App extends Component {
         />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={OnlyNotAuthorizedUserHoc(LoginPage)} />
-          <Route exact path="/registration" component={OnlyNotAuthorizedUserHoc(RegistrationPage)} />
+          <Route exact path="/login" component={withNotAuthHoc(LoginPage)} />
+          <Route exact path="/registration" component={withNotAuthHoc(RegistrationPage)} />
           <Route exact path="/payment" component={PrivateHoc(Payment)} />
           <Route exact path="/startContest" component={PrivateHoc(StartContestPage)} />
           <Route

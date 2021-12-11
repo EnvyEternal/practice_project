@@ -10,6 +10,7 @@ import carouselConstants from '../../carouselConstants';
 import Spinner from '../../components/Spinner/Spinner';
 import CardContainer from '../../components/CardContainer/CardContainer';
 import Pricing from '../../components/Pricing/Pricing';
+import AgencyLevel from '../../components/AgencyLevel/AgencyLevel';
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
@@ -216,6 +217,10 @@ const Home = (props) => {
                 images={carouselConstants.feedbackSliderImages}
                 carouselType={carouselConstants.FEEDBACK_SLIDER}
               />
+            </div>
+            <div className={styles.container__description}>
+              <h2 className={styles.blueUnderline}>Why Squadhelp Naming Services?</h2>
+              <AgencyLevel />              
             </div>
             <div className={styles.startContestContainer}>
               <span>

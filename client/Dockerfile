@@ -1,4 +1,4 @@
-FROM node:14.16.1-alpine3.13
+FROM node:14.18-stretch
 
 ARG NODE_ENV="development"
 
