@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import { getUserAction } from '../../actions/actionCreator';
 import Spinner from '../Spinner/Spinner';
 
-const PrivateHoc = (Component, props) => {
+const withAuthHoc = (Component, props) => {
   const mapStateToProps = (state) => state.userStore;
 
   const mapDispatchToProps = (dispatch) => ({
@@ -13,16 +12,18 @@ const PrivateHoc = (Component, props) => {
 
   class Hoc extends React.Component {
     componentDidMount() {
-      if (!this.props.data) {
-        this.props.getUser(this.props.history.replace);
+      const {data, history: {replace}, getUser} = this.props
+      if (!data) {
+        getUser(replace);
       }
     }
 
     render() {
+      const {isFetching, history, match} = this.props;
       return (
         <>
-          {this.props.isFetching ? <Spinner />
-            : <Component history={this.props.history} match={this.props.match} {...props} />}
+          {isFetching ? <Spinner />
+            : <Component history={history} match={match} {...props} />}
         </>
       );
     }
@@ -31,4 +32,4 @@ const PrivateHoc = (Component, props) => {
   return connect(mapStateToProps, mapDispatchToProps)(Hoc);
 };
 
-export default PrivateHoc;
+export default withAuthHoc;
